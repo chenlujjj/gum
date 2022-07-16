@@ -6,7 +6,7 @@ gum is short for Git User Manager. It can help you to switch git user account co
 # Installing
 
 ```sh
-go get -u github.com/chenlujjj/gum@latest
+go install github.com/chenlujjj/gum@latest
 ```
 # Usage
 
