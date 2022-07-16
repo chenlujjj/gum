@@ -12,10 +12,11 @@ func init() {
 }
 
 var deleteCmd = &cobra.Command{
-	Use:     "delete",
-	Short:   "Delete user in gum config.",
-	Example: "gum delete john",
-	Args:    cobra.ExactArgs(1),
+	Use:       "delete",
+	Short:     "Delete user in gum config.",
+	Example:   "gum delete john",
+	Args:      cobra.ExactArgs(1),
+	ValidArgs: userNames,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		f, err := os.Create(cfgFilePath)
 		if err != nil {

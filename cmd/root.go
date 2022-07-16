@@ -18,6 +18,7 @@ type user struct {
 
 var (
 	users       map[string]user
+	userNames   []string
 	cfgFilePath string
 
 	rootCmd = &cobra.Command{
@@ -41,6 +42,9 @@ func init() {
 	defer f.Close()
 	users, err = readUsers(f)
 	cobra.CheckErr(err)
+	for k := range users {
+		userNames = append(userNames, k)
+	}
 }
 
 func Execute() {
